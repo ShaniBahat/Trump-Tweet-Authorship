@@ -4,10 +4,11 @@ Identify whether a tweet from **@realDonaldTrump** was written by Donald Trump h
 
 ---
 
-## Dataset  
-| Source | Period | Size | Classes |
-|--------|--------|------|---------|
-| Twitter API | 2015 – 2017 | 3,528 tweets (balanced to 994 × 2) | **0 = Trump (Android)**, **1 = Staff (iPhone)** |
+## Dataset    
+- **Source:** Twitter API  
+- **Period:** 2015 – 2017  
+- **Total tweets:** 3,528 (balanced to 994 × 2)  
+- **Classes:** 0 = Trump (Android), 1 = Staff (iPhone)  
 
 ---
 
@@ -27,7 +28,7 @@ Identify whether a tweet from **@realDonaldTrump** was written by Donald Trump h
 - **Support Vector Machine** (linear)
 - **Feed-Forward Neural Net** (2 × hidden layers + dropout)
 - **XGBoost**
-- **DistilBERT**  ← transformer baseline  
+- **DistilBERT**  (transformer based)  
 
 Classical models used engineered features with 5-fold CV; DistilBERT was fine-tuned for 4 epochs on an 80 / 20 split.
 
@@ -48,7 +49,6 @@ Classical models used engineered features with 5-fold CV; DistilBERT was fine-tu
 * **Temporal split** – Android posts (Trump) spike late night/early morning; iPhone tweets (staff) cluster in business hours.  
 * **Tone & style** – Trump’s tweets are shorter, shoutier (ALL-CAPS, !!), and more opinionated; staff tweets contain more URLs/hashtags and neutral language.  
 * **Emotional profile** – Trump tweets swing between anger and joy; staff tweets are largely neutral.  
-* **Device ≈ author** – 90% accuracy validates the Android-equals-Trump heuristic.
 
 *Dataset caveats:* limited to 2015-2017, some retweets mis-labeled, and balancing may hide rare Android nuances.
 
@@ -60,7 +60,7 @@ Classical models used engineered features with 5-fold CV; DistilBERT was fine-tu
 
 ---
 
-##### Key LibrariesSkills Demonstrated
-**PyTorch**, **Hugging Face Transformers**, **scikit-learn**
+###### Key Libraries
+`PyTorch`, `Hugging Face Transformers`, `scikit-learn`
 
 ---
